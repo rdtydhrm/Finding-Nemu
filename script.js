@@ -49,8 +49,7 @@ const itemsData = [
   {
     id: 6,
     name: "TWS",
-    description:
-      "Merk Anker, warna hitam, ada stiker di casing",
+    description: "Merk Anker, warna hitam, ada stiker di casing",
     type: "electronics",
     status: "found",
     location: "Game Corner",
@@ -64,10 +63,6 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const reportForm = document.getElementById("reportForm");
-const successModal = new bootstrap.Modal(
-  document.getElementById("successModal")
-);
-const closeModal = document.getElementById("closeModal");
 
 // Render items
 function renderItems(items) {
@@ -189,7 +184,8 @@ searchInput.addEventListener("keypress", (e) => {
 
 reportForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  successModal.show();
+  alert("Laporan berhasil dikirim!");
+  reportForm.reset();
 });
 
 // Initial render
