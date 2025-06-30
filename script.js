@@ -1,4 +1,3 @@
-// Sample data for items
 const itemsData = [
   {
     id: 1,
@@ -57,14 +56,12 @@ const itemsData = [
   },
 ];
 
-// DOM Elements
 const itemsContainer = document.getElementById("itemsContainer");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const reportForm = document.getElementById("reportForm");
 
-// Render items
 function renderItems(items) {
   itemsContainer.innerHTML = "";
 
@@ -135,7 +132,6 @@ function renderItems(items) {
   });
 }
 
-// Filter items
 function filterItems(filter) {
   let filteredItems = [...itemsData];
 
@@ -150,7 +146,6 @@ function filterItems(filter) {
   renderItems(filteredItems);
 }
 
-// Search items
 function searchItems(query) {
   const filteredItems = itemsData.filter((item) => {
     return (
@@ -163,7 +158,6 @@ function searchItems(query) {
   renderItems(filteredItems);
 }
 
-// Event Listeners
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     filterButtons.forEach((btn) => btn.classList.remove("active"));
